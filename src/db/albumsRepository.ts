@@ -27,3 +27,43 @@ export async function findOrCreateAlbum(
   );
   return db.getFirstAsync<Album>('SELECT * FROM albums WHERE id = ?', result.lastInsertRowId);
 }
+
+export interface AlbumWithCount extends Album {
+  songCount: number;
+}
+
+export async function getAllAlbums(db: SQLiteDatabase, search = ''): Promise<AlbumWithCount[]> {
+  const trimmed = search.trim();
+  if (trimmed) {
+    const like = `%${trimmed}%`;
+    return db.getAllAsync<AlbumWithCount>(
+      `SELECT a.*, COUNT(s.id) as songCount
+       FROM albums a
+       JOIN songs s ON s.albumId = a.id AND s.isAvailable = 1
+       WHERE a.name LIKE ? COLLATE NOCASE OR a.artist LIKE ? COLLATE NOCASE
+       GROUP BY a.id
+       ORDER BY a.name COLLATE NOCASE ASC`,
+      like,
+      like,
+    );
+  }
+  return db.getAllAsync<AlbumWithCount>(
+    `SELECT a.*, COUNT(s.id) as songCount
+     FROM albums a
+     JOIN songs s ON s.albumId = a.id AND s.isAvailable = 1
+     GROUP BY a.id
+     ORDER BY a.name COLLATE NOCASE ASC`,
+  );
+}
+
+export async function getRecentAlbums(db: SQLiteDatabase, limit = 20): Promise<AlbumWithCount[]> {
+  return db.getAllAsync<AlbumWithCount>(
+    `SELECT a.*, COUNT(s.id) as songCount
+     FROM albums a
+     JOIN songs s ON s.albumId = a.id AND s.isAvailable = 1
+     GROUP BY a.id
+     ORDER BY a.dateCreated DESC
+     LIMIT ?`,
+    limit,
+  );
+}

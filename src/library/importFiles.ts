@@ -94,6 +94,7 @@ export async function importPickedFiles(
         fileSize: asset.size ?? destination.size ?? 0,
         coverUri,
         sourceType: 'IMPORTED',
+        sourceUrl: null,
         checksum,
       });
       imported.push(song);

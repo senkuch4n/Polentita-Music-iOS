@@ -56,3 +56,21 @@ export interface PlaylistSongCrossRef {
   position: number;
   dateAdded: number;
 }
+
+export type DownloadStatus = 'PENDING' | 'DOWNLOADING' | 'COMPLETED' | 'FAILED' | 'CANCELLED';
+
+export interface Download {
+  id: number;
+  sourceUrl: string;
+  videoId: string;
+  title: string;
+  artist: string;
+  thumbnail: string | null;
+  status: DownloadStatus;
+  bytesDownloaded: number;
+  totalBytes: number;
+  errorMessage: string | null;
+  songId: number | null;
+  createdAt: number;
+  completedAt: number | null;
+}

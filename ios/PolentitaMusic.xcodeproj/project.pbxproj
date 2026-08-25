@@ -7,25 +7,56 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D6D62D908DE99412E9F4469 /* libqjsbridge-device.dylib in Resources */ = {isa = PBXBuildFile; fileRef = AD4CD33272837267305BCD17 /* libqjsbridge-device.dylib */; };
+		0F0ADD5112DF0EEEFF59A92B /* Python.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 23FC38BCF995C2A31DDC0CE0 /* Python.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		216C74D917A2DAD47EBFB490 /* libqjsbridge-simulator.dylib in Resources */ = {isa = PBXBuildFile; fileRef = BFA63FC21E7F222110FCB79E /* libqjsbridge-simulator.dylib */; };
 		27D204DA76347507B23DFCDB /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = ED1D3F2FD64D692EA37BD773 /* PrivacyInfo.xcprivacy */; };
+		30E299741F5B50151CB9F6A9 /* PythonRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 591B57AF50427933E1CC5FE0 /* PythonRuntime.m */; };
 		3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */; };
 		41D402930E69A7B54CB139B9 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055BE00149831A93DE5D818F /* ExpoModulesProvider.swift */; };
+		4369AD2572C63916EDCFDE4C /* app_packages in Resources */ = {isa = PBXBuildFile; fileRef = 8F9F213F56F83C243979E6E0 /* app_packages */; };
 		448A9C8ADBF800559F5E3084 /* libPods-PolentitaMusic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DEC1B27765DAC4FA1070AA96 /* libPods-PolentitaMusic.a */; };
+		6E1265F41E9437923B198002 /* PythonBridgeModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 460F3D47039831B703820C90 /* PythonBridgeModule.m */; };
+		8A90CF04DAEC08424F3331B4 /* Python.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23FC38BCF995C2A31DDC0CE0 /* Python.xcframework */; };
 		BB2F792D24A3F905000567C9 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB2F792C24A3F905000567C9 /* Expo.plist */; };
 		F11748422D0307B40044C1D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11748412D0307B40044C1D9 /* AppDelegate.swift */; };
+		FFAE85E2F129FE7750FEFC4C /* app in Resources */ = {isa = PBXBuildFile; fileRef = E1C668BFA1758961BBCB2851 /* app */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F6A571779467D77D4ACB1A12 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0F0ADD5112DF0EEEFF59A92B /* Python.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		055BE00149831A93DE5D818F /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-PolentitaMusic/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* PolentitaMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PolentitaMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = PolentitaMusic/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = PolentitaMusic/Info.plist; sourceTree = "<group>"; };
+		23FC38BCF995C2A31DDC0CE0 /* Python.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = Python.xcframework; sourceTree = "<group>"; };
 		2FC72B4BC280C8DE6D83431B /* Pods-PolentitaMusic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PolentitaMusic.debug.xcconfig"; path = "Target Support Files/Pods-PolentitaMusic/Pods-PolentitaMusic.debug.xcconfig"; sourceTree = "<group>"; };
+		41895A7A64A50096BD7F378E /* PythonRuntime.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PythonRuntime.h; sourceTree = "<group>"; };
+		460F3D47039831B703820C90 /* PythonBridgeModule.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PythonBridgeModule.m; sourceTree = "<group>"; };
+		591B57AF50427933E1CC5FE0 /* PythonRuntime.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PythonRuntime.m; sourceTree = "<group>"; };
+		7B1942F57AF3F1F0A68ED8A3 /* PythonBridgeModule.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PythonBridgeModule.h; sourceTree = "<group>"; };
+		8F9F213F56F83C243979E6E0 /* app_packages */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = app_packages; path = PythonApp/app_packages; sourceTree = SOURCE_ROOT; };
 		AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SplashScreen.storyboard; path = PolentitaMusic/SplashScreen.storyboard; sourceTree = "<group>"; };
+		AD4CD33272837267305BCD17 /* libqjsbridge-device.dylib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "compiled.mach-o.dylib"; path = "libqjsbridge-device.dylib"; sourceTree = "<group>"; };
 		BB2F792C24A3F905000567C9 /* Expo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Expo.plist; sourceTree = "<group>"; };
 		BF601386371EEADA105AED78 /* Pods-PolentitaMusic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PolentitaMusic.release.xcconfig"; path = "Target Support Files/Pods-PolentitaMusic/Pods-PolentitaMusic.release.xcconfig"; sourceTree = "<group>"; };
+		BFA63FC21E7F222110FCB79E /* libqjsbridge-simulator.dylib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "compiled.mach-o.dylib"; path = "libqjsbridge-simulator.dylib"; sourceTree = "<group>"; };
 		DEC1B27765DAC4FA1070AA96 /* libPods-PolentitaMusic.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PolentitaMusic.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1C668BFA1758961BBCB2851 /* app */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = app; path = PythonApp/app; sourceTree = SOURCE_ROOT; };
 		ED1D3F2FD64D692EA37BD773 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = PolentitaMusic/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F11748412D0307B40044C1D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = PolentitaMusic/AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +69,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				448A9C8ADBF800559F5E3084 /* libPods-PolentitaMusic.a in Frameworks */,
+				8A90CF04DAEC08424F3331B4 /* Python.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +88,22 @@
 				ED1D3F2FD64D692EA37BD773 /* PrivacyInfo.xcprivacy */,
 			);
 			name = PolentitaMusic;
+			sourceTree = "<group>";
+		};
+		17A00FC4788717406980553A /* PythonApp */ = {
+			isa = PBXGroup;
+			children = (
+				41895A7A64A50096BD7F378E /* PythonRuntime.h */,
+				591B57AF50427933E1CC5FE0 /* PythonRuntime.m */,
+				7B1942F57AF3F1F0A68ED8A3 /* PythonBridgeModule.h */,
+				460F3D47039831B703820C90 /* PythonBridgeModule.m */,
+				E1C668BFA1758961BBCB2851 /* app */,
+				8F9F213F56F83C243979E6E0 /* app_packages */,
+				AD4CD33272837267305BCD17 /* libqjsbridge-device.dylib */,
+				BFA63FC21E7F222110FCB79E /* libqjsbridge-simulator.dylib */,
+			);
+			name = PythonApp;
+			path = PythonApp;
 			sourceTree = "<group>";
 		};
 		1F069C113B2F84DFF7822B99 /* Pods */ = {
@@ -101,6 +149,8 @@
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				1F069C113B2F84DFF7822B99 /* Pods */,
 				E7309688594BCAEB321C3C59 /* ExpoModulesProviders */,
+				17A00FC4788717406980553A /* PythonApp */,
+				23FC38BCF995C2A31DDC0CE0 /* Python.xcframework */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -144,10 +194,13 @@
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
+				7E8CCC8625C7B1677C2CD56E /* Install QuickJS bridge */,
+				75707562E0E1A2E7291C71C3 /* Process Python libraries */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				800E24972A6A228C8D4807E9 /* [CP] Copy Pods Resources */,
 				9CC58A1155984BDD943FD455 /* [Expo Dev Launcher] Strip Local Network Keys for Release */,
 				763F2ABFEA97B144FB9194B3 /* [CP] Embed Pods Frameworks */,
+				F6A571779467D77D4ACB1A12 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -167,8 +220,8 @@
 				LastUpgradeCheck = 1130;
 				TargetAttributes = {
 					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = AF64X5KM2A;
 						LastSwiftMigration = 1250;
-						DevelopmentTeam = "AF64X5KM2A";
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -200,6 +253,10 @@
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */,
 				27D204DA76347507B23DFCDB /* PrivacyInfo.xcprivacy in Resources */,
+				FFAE85E2F129FE7750FEFC4C /* app in Resources */,
+				4369AD2572C63916EDCFDE4C /* app_packages in Resources */,
+				0D6D62D908DE99412E9F4469 /* libqjsbridge-device.dylib in Resources */,
+				216C74D917A2DAD47EBFB490 /* libqjsbridge-simulator.dylib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +326,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		75707562E0E1A2E7291C71C3 /* Process Python libraries */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Process Python libraries";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nsource \"$PROJECT_DIR/Python.xcframework/build/utils.sh\"\ninstall_python Python.xcframework app app_packages\n";
+		};
 		763F2ABFEA97B144FB9194B3 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -312,6 +387,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PolentitaMusic/Pods-PolentitaMusic-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		7E8CCC8625C7B1677C2CD56E /* Install QuickJS bridge */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Install QuickJS bridge";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nif [ \"$EFFECTIVE_PLATFORM_NAME\" = \"-iphonesimulator\" ]; then\n  SRC=\"$PROJECT_DIR/PythonApp/libqjsbridge-simulator.dylib\"\nelse\n  SRC=\"$PROJECT_DIR/PythonApp/libqjsbridge-device.dylib\"\nfi\nDEST=\"$CODESIGNING_FOLDER_PATH/libqjsbridge.dylib\"\ncp -f \"$SRC\" \"$DEST\"\nif [ -n \"$EXPANDED_CODE_SIGN_IDENTITY\" ]; then\n  codesign --force --sign \"$EXPANDED_CODE_SIGN_IDENTITY\" \"$DEST\"\nelse\n  codesign --force --sign - \"$DEST\"\nfi\n";
 		};
 		800E24972A6A228C8D4807E9 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -368,6 +461,8 @@
 			files = (
 				F11748422D0307B40044C1D9 /* AppDelegate.swift in Sources */,
 				41D402930E69A7B54CB139B9 /* ExpoModulesProvider.swift in Sources */,
+				30E299741F5B50151CB9F6A9 /* PythonRuntime.m in Sources */,
+				6E1265F41E9437923B198002 /* PythonBridgeModule.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,11 +476,25 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PolentitaMusic/PolentitaMusic.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AF64X5KM2A;
 				ENABLE_BITCODE = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = x86_64;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(BUILT_PRODUCTS_DIR)",
+				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"FB_SONARKIT_ENABLED=1",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(BUILT_PRODUCTS_DIR)/Python.framework/Headers\"",
 				);
 				INFOPLIST_FILE = PolentitaMusic/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
@@ -408,9 +517,6 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
-				DEVELOPMENT_TEAM = "AF64X5KM2A";
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
 			};
 			name = Debug;
 		};
@@ -421,7 +527,21 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PolentitaMusic/PolentitaMusic.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AF64X5KM2A;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = x86_64;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(BUILT_PRODUCTS_DIR)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(BUILT_PRODUCTS_DIR)/Python.framework/Headers\"",
+				);
 				INFOPLIST_FILE = PolentitaMusic/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -442,9 +562,6 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
-				DEVELOPMENT_TEAM = "AF64X5KM2A";
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
 			};
 			name = Release;
 		};

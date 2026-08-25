@@ -19,3 +19,29 @@ export function ensureLibraryDirectories(): void {
 export function sanitizeFileName(name: string): string {
   return name.replace(/[/\\?%*:|"<>]/g, '_');
 }
+
+// The Python bridge (ctypes/ObjC, not expo-file-system) deals in plain POSIX
+// paths, not `file://` URIs -- os.makedirs()/yt-dlp's outtmpl would otherwise
+// try to create a directory literally named "file:...". Convert at the
+// boundary in both directions instead of threading URIs into Python.
+export function toPosixPath(uri: string): string {
+  return uri.replace(/^file:\/\//, '');
+}
+
+export function toFileUri(posixPath: string): string {
+  return posixPath.startsWith('file://') ? posixPath : `file://${posixPath}`;
+}
+
+// Downloads have no native progress callback wired up yet (the ObjC/Python
+// bridge only exposes a one-shot promise -- see downloads/downloadManager.ts),
+// so progress is derived by polling how many bytes yt-dlp has physically
+// written into `downloadsDirectory` so far.
+export function directorySizeBytes(dir: Directory): number {
+  let total = 0;
+  for (const entry of dir.list()) {
+    if ('size' in entry && typeof entry.size === 'number') {
+      total += entry.size;
+    }
+  }
+  return total;
+}

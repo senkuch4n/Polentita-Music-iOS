@@ -1,5 +1,6 @@
 // Mirrors the Android app's NavHost routes (MainActivity.kt) so the iOS
 // screen inventory stays 1:1 with Android during the port.
+import type { NavigatorScreenParams } from '@react-navigation/native';
 
 export type TabParamList = {
   Home: undefined;
@@ -10,11 +11,11 @@ export type TabParamList = {
 };
 
 export type RootStackParamList = {
-  Tabs: undefined;
+  Tabs: NavigatorScreenParams<TabParamList> | undefined;
   AlbumDetail: { albumId: string };
   ArtistDetail: { artist: string };
-  PlaylistDetail: { playlistId: string };
-  SmartPlaylist: { kind: string };
+  PlaylistDetail: { playlistId: number; playlistName: string };
+  SmartPlaylist: { kind: 'favorites' | 'mostPlayed' };
   PlaylistImport: undefined;
   About: undefined;
   Player: undefined;

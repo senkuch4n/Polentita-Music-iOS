@@ -15,7 +15,8 @@
           "fetch"
         ],
         "UIFileSharingEnabled": true,
-        "LSSupportsOpeningDocumentsInPlace": true
+        "LSSupportsOpeningDocumentsInPlace": true,
+        "NSPhotoLibraryUsageDescription": "Se usa para elegir una foto de portada para tus listas."
       }
     },
     "android": {
@@ -33,7 +34,9 @@
     "plugins": [
       "expo-sqlite",
       "expo-image",
-      "expo-asset"
+      "expo-asset",
+      "expo-sharing",
+      "expo-image-picker"
     ]
   }
 }

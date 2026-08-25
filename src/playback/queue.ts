@@ -12,3 +12,9 @@ export async function playSongs(songs: Song[], startIndex = 0): Promise<void> {
   }
   await TrackPlayer.play();
 }
+
+export async function playNext(song: Song): Promise<void> {
+  await ensurePlayerSetup();
+  const activeIndex = await TrackPlayer.getActiveTrackIndex();
+  await TrackPlayer.add([songToTrack(song)], (activeIndex ?? -1) + 1);
+}
