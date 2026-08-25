@@ -37,5 +37,13 @@ yarn-error.*
 *.tsbuildinfo
 
 # generated native folders
-/ios
+# ios/ IS committed (bare workflow -- custom native modules live here from
+# step 4 onward), only build output and Pods are excluded. Android isn't
+# targeted from this repo (see project plan).
 /android
+/ios/Pods/
+/ios/build/
+/ios/DerivedData/
+/ios/*.xcworkspace/xcuserdata/
+/ios/*.xcodeproj/xcuserdata/
+/ios/*.xcodeproj/project.xcworkspace/xcuserdata/
