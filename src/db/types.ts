@@ -74,3 +74,68 @@ export interface Download {
   createdAt: number;
   completedAt: number | null;
 }
+
+export type ImportSource = 'file' | 'spotify' | 'youtube';
+export type ImportState = 'ANALYZED' | 'REVIEW' | 'RUNNING' | 'PAUSED' | 'COMPLETED' | 'PARTIAL' | 'CANCELLED' | 'ERROR';
+export type ImportItemState =
+  | 'PENDING'
+  | 'SEARCHING'
+  | 'PROBABLE_MATCH'
+  | 'REQUIRES_REVIEW'
+  | 'IN_LIBRARY'
+  | 'DOWNLOADING'
+  | 'COMPLETED'
+  | 'OMITTED'
+  | 'ERROR';
+export type MatchConfidence = 'HIGH' | 'MEDIUM' | 'LOW';
+
+export interface PlaylistImport {
+  id: number;
+  source: ImportSource;
+  sourceId: string;
+  sourceUrl: string | null;
+  name: string;
+  description: string;
+  artworkUrl: string | null;
+  owner: string | null;
+  totalTracks: number;
+  localPlaylistId: number | null;
+  state: ImportState;
+  createdAt: number;
+  updatedAt: number;
+  completedAt: number | null;
+  errorMessage: string | null;
+}
+
+export interface PlaylistImportItem {
+  id: number;
+  importId: number;
+  title: string;
+  artist: string;
+  album: string;
+  durationMs: number;
+  originalPosition: number;
+  selected: boolean;
+  state: ImportItemState;
+  directVideoId: string | null;
+  directUrl: string | null;
+  directThumbnail: string | null;
+  localSongId: number | null;
+  selectedCandidateId: number | null;
+  attemptCount: number;
+  errorMessage: string | null;
+}
+
+export interface PlaylistImportCandidate {
+  id: number;
+  itemId: number;
+  videoId: string;
+  title: string;
+  channel: string;
+  durationMs: number;
+  thumbnail: string | null;
+  webpageUrl: string;
+  score: number;
+  confidence: MatchConfidence;
+  rank: number;
+}

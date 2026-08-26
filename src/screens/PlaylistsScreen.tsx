@@ -55,10 +55,15 @@ export function PlaylistsScreen() {
     <View style={screenStyles.screen}>
       <View style={styles.header}>
         <Text style={screenStyles.title}>Listas</Text>
-        <PressableScale style={styles.newButton} onPress={handleCreate} haptic>
-          <Ionicons name="add" size={18} color={theme.colors.darkOnBright} />
-          <Text style={styles.newButtonText}>Nueva lista</Text>
-        </PressableScale>
+        <View style={styles.headerButtons}>
+          <PressableScale style={styles.importButton} onPress={() => navigation.navigate('PlaylistImport')} haptic>
+            <Ionicons name="cloud-download-outline" size={18} color={theme.colors.primaryOnDark} />
+          </PressableScale>
+          <PressableScale style={styles.newButton} onPress={handleCreate} haptic>
+            <Ionicons name="add" size={18} color={theme.colors.darkOnBright} />
+            <Text style={styles.newButtonText}>Nueva lista</Text>
+          </PressableScale>
+        </View>
       </View>
       <FlatList
         data={playlists}
@@ -113,6 +118,19 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     padding: theme.spacing.large,
+  },
+  headerButtons: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: theme.spacing.small,
+  },
+  importButton: {
+    width: 34,
+    height: 34,
+    borderRadius: theme.radii.pill,
+    backgroundColor: theme.colors.surfaceRaised,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   newButton: {
     flexDirection: 'row',

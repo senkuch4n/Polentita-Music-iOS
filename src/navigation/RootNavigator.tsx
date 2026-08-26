@@ -5,6 +5,7 @@ import { DownloadsHistoryScreen, DownloadsNewScreen } from '../screens/Downloads
 import { PlaceholderScreen } from '../screens/PlaceholderScreen';
 import { PlayerScreen } from '../screens/PlayerScreen';
 import { PlaylistDetailScreen } from '../screens/PlaylistDetailScreen';
+import { PlaylistImportScreen } from '../screens/PlaylistImportScreen';
 import { SmartPlaylistScreen } from '../screens/SmartPlaylistScreen';
 import { SongEditorScreen } from '../screens/SongEditorScreen';
 import { TechnicalScreen } from '../screens/TechnicalScreen';
@@ -43,7 +44,7 @@ export function RootNavigator() {
           options={({ route }) => ({ title: route.params.playlistName })}
         />
         <Stack.Screen name="SmartPlaylist" component={SmartPlaylistScreen} options={{ title: 'Lista inteligente' }} />
-        <Stack.Screen name="PlaylistImport" component={PlaceholderScreen} options={{ title: 'Importar lista' }} />
+        <Stack.Screen name="PlaylistImport" component={PlaylistImportScreen} options={{ title: 'Importar lista' }} />
         <Stack.Screen name="About" component={PlaceholderScreen} options={{ title: 'Acerca de' }} />
         <Stack.Screen name="Player" component={PlayerScreen} options={{ headerShown: false, presentation: 'modal' }} />
         <Stack.Screen name="Queue" component={PlaceholderScreen} options={{ title: 'Cola' }} />

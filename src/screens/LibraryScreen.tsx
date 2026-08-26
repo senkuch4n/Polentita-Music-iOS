@@ -103,10 +103,13 @@ export function LibraryScreen() {
 
   async function handleTestPythonBridge() {
     const t0 = Date.now();
+    console.log('[pythonBridgeTest] calling previewAudio...');
     try {
       const media = await previewAudio('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
+      console.log('[pythonBridgeTest] OK', ((Date.now() - t0) / 1000).toFixed(1) + 's', media.title, media.artist);
       Alert.alert('PythonBridge OK', `${((Date.now() - t0) / 1000).toFixed(1)}s\n${media.title}\n${media.artist ?? ''}`);
     } catch (e: any) {
+      console.log('[pythonBridgeTest] FAILED', ((Date.now() - t0) / 1000).toFixed(1) + 's', e?.message ?? String(e));
       Alert.alert('PythonBridge FAILED', `${((Date.now() - t0) / 1000).toFixed(1)}s\n${e?.message ?? String(e)}`);
     }
   }

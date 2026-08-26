@@ -1,3 +1,5 @@
+import type { SQLiteDatabase } from 'expo-sqlite';
+
 // Ported from the Android app's Room schema (android-source/.../core/database/Entities.kt).
 // playback_history is included since Home's "recent/most played" needs it. `downloads`
 // was added for project plan step 4 (PythonBridge/yt-dlp search+download); the
@@ -122,6 +124,93 @@ CREATE TABLE IF NOT EXISTS saved_references (
   savedAt INTEGER NOT NULL
 );
 CREATE INDEX IF NOT EXISTS index_saved_references_savedAt ON saved_references(savedAt);
+
+-- Playlist Import (mirrors android-source's playlist_imports/_items/_candidates,
+-- minus provider-specific fields that don't apply -- this app only supports
+-- file/Spotify/YouTube sources, matched against YouTube search results
+-- instead of a licensed catalog).
+CREATE TABLE IF NOT EXISTS playlist_imports (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  source TEXT NOT NULL,              -- 'file' | 'spotify' | 'youtube'
+  sourceId TEXT NOT NULL,
+  sourceUrl TEXT,
+  name TEXT NOT NULL,
+  description TEXT NOT NULL DEFAULT '',
+  artworkUrl TEXT,
+  owner TEXT,
+  totalTracks INTEGER NOT NULL DEFAULT 0,
+  localPlaylistId INTEGER REFERENCES playlists(id) ON DELETE SET NULL,
+  state TEXT NOT NULL DEFAULT 'ANALYZED', -- ANALYZED|REVIEW|RUNNING|PAUSED|COMPLETED|PARTIAL|CANCELLED|ERROR
+  createdAt INTEGER NOT NULL,
+  updatedAt INTEGER NOT NULL,
+  completedAt INTEGER,
+  errorMessage TEXT
+);
+CREATE UNIQUE INDEX IF NOT EXISTS index_playlist_imports_source ON playlist_imports(source, sourceId);
+CREATE INDEX IF NOT EXISTS index_playlist_imports_createdAt ON playlist_imports(createdAt);
+
+CREATE TABLE IF NOT EXISTS playlist_import_items (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  importId INTEGER NOT NULL REFERENCES playlist_imports(id) ON DELETE CASCADE,
+  title TEXT NOT NULL,
+  artist TEXT NOT NULL DEFAULT '',
+  album TEXT NOT NULL DEFAULT '',
+  durationMs INTEGER NOT NULL DEFAULT 0,
+  originalPosition INTEGER NOT NULL,
+  selected INTEGER NOT NULL DEFAULT 1,
+  state TEXT NOT NULL DEFAULT 'PENDING', -- PENDING|SEARCHING|PROBABLE_MATCH|REQUIRES_REVIEW|IN_LIBRARY|DOWNLOADING|COMPLETED|OMITTED|ERROR
+  -- Set only for YouTube-sourced imports, where inspect_playlist already gives
+  -- the exact video per track -- lets resolveMissing skip search/matching
+  -- entirely and queue the direct URL instead (no ambiguity to resolve).
+  directVideoId TEXT,
+  directUrl TEXT,
+  directThumbnail TEXT,
+  localSongId INTEGER REFERENCES songs(id) ON DELETE SET NULL,
+  selectedCandidateId INTEGER,
+  attemptCount INTEGER NOT NULL DEFAULT 0,
+  errorMessage TEXT
+);
+CREATE INDEX IF NOT EXISTS index_playlist_import_items_importId ON playlist_import_items(importId);
+
+CREATE TABLE IF NOT EXISTS playlist_import_candidates (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  itemId INTEGER NOT NULL REFERENCES playlist_import_items(id) ON DELETE CASCADE,
+  videoId TEXT NOT NULL,
+  title TEXT NOT NULL,
+  channel TEXT NOT NULL DEFAULT '',
+  durationMs INTEGER NOT NULL DEFAULT 0,
+  thumbnail TEXT,
+  webpageUrl TEXT NOT NULL,
+  score REAL NOT NULL,
+  confidence TEXT NOT NULL,          -- HIGH|MEDIUM|LOW
+  rank INTEGER NOT NULL DEFAULT 0
+);
+CREATE INDEX IF NOT EXISTS index_playlist_import_candidates_itemId ON playlist_import_candidates(itemId);
 `;
 
 export const DATABASE_NAME = 'polentita.db';
+
+// `CREATE TABLE IF NOT EXISTS` only helps brand-new tables -- it's a no-op
+// for a table that already exists on a device from an earlier build, so
+// adding a column to an existing table's definition above does nothing on
+// upgrade. This runs after SCHEMA_SQL and adds any columns that are missing
+// on an already-existing table, without touching tables/columns already there.
+interface ColumnMigration {
+  table: string;
+  column: string;
+  definition: string;
+}
+
+const COLUMN_MIGRATIONS: ColumnMigration[] = [
+  { table: 'playlist_import_items', column: 'directVideoId', definition: 'TEXT' },
+  { table: 'playlist_import_items', column: 'directUrl', definition: 'TEXT' },
+  { table: 'playlist_import_items', column: 'directThumbnail', definition: 'TEXT' },
+];
+
+export async function applyColumnMigrations(db: SQLiteDatabase): Promise<void> {
+  for (const migration of COLUMN_MIGRATIONS) {
+    const existing = await db.getAllAsync<{ name: string }>(`PRAGMA table_info(${migration.table})`);
+    if (existing.some((c) => c.name === migration.column)) continue;
+    await db.execAsync(`ALTER TABLE ${migration.table} ADD COLUMN ${migration.column} ${migration.definition}`);
+  }
+}

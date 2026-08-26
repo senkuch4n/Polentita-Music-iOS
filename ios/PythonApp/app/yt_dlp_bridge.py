@@ -9,7 +9,10 @@ import yt_dlp
 MAX_FILE_SIZE = 512 * 1024 * 1024
 # YouTube puede devolver formatos DRM para el cliente predeterminado. Estos
 # clientes públicos no requieren cookies y cubren el caso de recuperación.
-YOUTUBE_FALLBACK_CLIENTS = ("android_vr", "web_embedded", "tv")
+# android_vr salió de la lista: yt-dlp 2026.08.19 lo sacó de sus propios
+# clientes por defecto (dejó de ser confiable), así que probarlo primero acá
+# solo desperdiciaba un intento antes de llegar a los que sí funcionan.
+YOUTUBE_FALLBACK_CLIENTS = ("web_embedded", "tv")
 
 
 class _QuietLogger:
