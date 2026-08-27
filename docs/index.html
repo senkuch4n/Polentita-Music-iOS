@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Polentita Music — Reproductor de música para iPhone</title>
+<meta name="description" content="Polentita Music es un reproductor de música para iPhone: biblioteca local, importación de playlists de Spotify y YouTube, y reproducción en segundo plano. Se instala por sideload con Sideloadly o AltStore." />
+<meta name="theme-color" content="#0c0c10" />
+<link rel="icon" href="assets/favicon.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Polentita Music — Reproductor de música para iPhone" />
+<meta property="og:description" content="Biblioteca local, playlists de Spotify/YouTube y reproducción en segundo plano. Sideload con Sideloadly o AltStore." />
+<meta property="og:image" content="assets/icon-512.png" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="nav__brand" href="#top">
+      <img src="assets/icon-512.png" alt="" width="32" height="32" />
+      <span>Polentita<strong>Music</strong></span>
+    </a>
+    <nav class="nav__links">
+      <a href="#features">Características</a>
+      <a href="#install">Instalar</a>
+      <a href="#faq">Preguntas</a>
+      <a class="nav__gh" href="https://github.com/senkuch4n/Polentita-Music-iOS" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        <span>GitHub</span>
+      </a>
+      <a class="btn btn--sm btn--primary" href="https://github.com/senkuch4n/Polentita-Music-iOS/releases/latest">Descargar</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="hero__glow" aria-hidden="true"></div>
+    <div class="hero__inner">
+      <div class="hero__copy">
+        <p class="eyebrow">Reproductor de música · iOS 16.4+</p>
+        <h1>Tu música, tu&nbsp;biblioteca,<br />tu&nbsp;iPhone.</h1>
+        <p class="hero__sub">
+          Polentita Music es un reproductor local para iPhone con importación de
+          playlists de Spotify y YouTube, motor de descarga embebido y
+          reproducción en segundo plano. Sin cuentas, sin anuncios, sin App Store.
+        </p>
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="https://github.com/senkuch4n/Polentita-Music-iOS/releases/latest/download/PolentitaMusic.ipa">
+            Descargar&nbsp;.ipa
+          </a>
+          <a class="btn btn--ghost" href="#install">Cómo instalar</a>
+        </div>
+        <p class="hero__note">
+          Se instala por <em>sideload</em> con Sideloadly o AltStore. No necesitás jailbreak.
+        </p>
+      </div>
+
+      <div class="hero__art" aria-hidden="true">
+        <div class="phone">
+          <div class="phone__notch"></div>
+          <div class="phone__screen">
+            <div class="np">
+              <img class="np__cover" src="assets/icon-512.png" alt="" />
+              <div class="np__title">Polentita Music</div>
+              <div class="np__artist">Reproduciendo de tu biblioteca</div>
+              <div class="np__bar"><span></span></div>
+              <div class="np__times"><span>1:24</span><span>3:57</span></div>
+              <div class="np__controls">
+                <svg viewBox="0 0 24 24" width="26" height="26"><path fill="currentColor" d="M6 6h2v12H6zm3.5 6 8.5 6V6z"/></svg>
+                <svg viewBox="0 0 24 24" width="40" height="40"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
+                <svg viewBox="0 0 24 24" width="26" height="26"><path fill="currentColor" d="M16 6h2v12h-2zM6 6l8.5 6L6 18z"/></svg>
+              </div>
+            </div>
+            <ul class="tracklist">
+              <li><span>1</span> Intro <b>2:03</b></li>
+              <li><span>2</span> Playlist importada <b>3:57</b></li>
+              <li><span>3</span> Tema local <b>4:12</b></li>
+              <li><span>4</span> Otra más <b>2:48</b></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="strip">
+    <div class="strip__inner">
+      <span>iPhone</span><span>iOS&nbsp;16.4+</span><span>Sideloadly</span><span>AltStore</span><span>Offline</span><span>Sin&nbsp;App&nbsp;Store</span>
+    </div>
+  </section>
+
+  <section class="section features" id="features">
+    <div class="section__head">
+      <p class="eyebrow">Características</p>
+      <h2>Todo lo que esperás de una app de música, sin ataduras.</h2>
+      <p class="section__lead">Corre por completo en tu dispositivo. Nada de servidores, logins ni telemetría.</p>
+    </div>
+
+    <div class="grid">
+      <article class="card">
+        <div class="card__ico">
+          <svg viewBox="0 0 24 24" width="24" height="24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9 18V5l12-2v13M9 18a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm12-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/></svg>
+        </div>
+        <h3>Biblioteca local</h3>
+        <p>Importá tus archivos de audio y escuchalos sin conexión. Todo vive en tu iPhone, en una base de datos SQLite propia.</p>
+      </article>
+
+      <article class="card">
+        <div class="card__ico">
+          <svg viewBox="0 0 24 24" width="24" height="24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 6h10M4 12h10M4 18h7M15 15l3 3 5-6"/></svg>
+        </div>
+        <h3>Importar playlists</h3>
+        <p>Pegá un enlace de Spotify o YouTube y Polentita arma la lista, resuelve cada tema y descarga el audio.</p>
+      </article>
+
+      <article class="card">
+        <div class="card__ico">
+          <svg viewBox="0 0 24 24" width="24" height="24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 17V7l6 4-6 4Zm8 3V4l8 8-8 8Z"/></svg>
+        </div>
+        <h3>Motor yt-dlp embebido</h3>
+        <p>Un bridge Python/QuickJS integrado en la app resuelve y baja el audio. Sin servicios externos de por medio.</p>
+      </article>
+
+      <article class="card">
+        <div class="card__ico">
+          <svg viewBox="0 0 24 24" width="24" height="24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 3v18M6 8v8M18 8v8M3 11v2M21 11v2"/></svg>
+        </div>
+        <h3>Segundo plano</h3>
+        <p>Controles en la pantalla de bloqueo y el Centro de Control, con audio que sigue sonando al cerrar la app.</p>
+      </article>
+
+      <article class="card">
+        <div class="card__ico">
+          <svg viewBox="0 0 24 24" width="24" height="24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m4 20 4-1 10-10a2.83 2.83 0 0 0-4-4L4 15l-1 4ZM13 7l4 4"/></svg>
+        </div>
+        <h3>Editor de canciones</h3>
+        <p>Cambiá título, artista y portada de cualquier tema. Elegí la imagen de portada directamente desde tu galería.</p>
+      </article>
+
+      <article class="card">
+        <div class="card__ico">
+          <svg viewBox="0 0 24 24" width="24" height="24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>
+        </div>
+        <h3>Sin cuentas ni anuncios</h3>
+        <p>No hay login, no hay seguimiento, no hay publicidad. La app es tuya y funciona completamente offline.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section install" id="install">
+    <div class="section__head">
+      <p class="eyebrow">Instalación</p>
+      <h2>De cero a sonando en cuatro pasos.</h2>
+      <p class="section__lead">Necesitás una Mac o PC, un cable USB y un Apple ID. Con Apple ID gratis la firma dura 7 días; con cuenta de Apple Developer, un año.</p>
+    </div>
+
+    <div class="steps">
+      <ol>
+        <li>
+          <h3>Descargá el <code>.ipa</code></h3>
+          <p>Bajá <code>PolentitaMusic.ipa</code> desde la sección <a href="https://github.com/senkuch4n/Polentita-Music-iOS/releases/latest" target="_blank" rel="noopener">Releases</a> del repositorio.</p>
+        </li>
+        <li>
+          <h3>Instalá Sideloadly o AltStore</h3>
+          <p>Descargá <a href="https://sideloadly.io" target="_blank" rel="noopener">Sideloadly</a> (más simple) o <a href="https://altstore.io" target="_blank" rel="noopener">AltStore</a> (se re-firma solo) en tu computadora.</p>
+        </li>
+        <li>
+          <h3>Firmá e instalá</h3>
+          <p>Conectá el iPhone, arrastrá el <code>.ipa</code>, escribí tu Apple ID y pulsá <b>Start</b>. Si tenés verificación en dos pasos, usá una contraseña específica de app.</p>
+        </li>
+        <li>
+          <h3>Confiá el perfil</h3>
+          <p>En el iPhone: <b>Ajustes → General → VPN y gestión de dispositivos</b> → tu Apple ID → <b>Confiar</b>. Abrí Polentita Music.</p>
+        </li>
+      </ol>
+
+      <div class="term">
+        <div class="term__bar"><i></i><i></i><i></i><span>¿Preferís compilar vos mismo?</span></div>
+        <pre><code><span class="c">$</span> git clone https://github.com/senkuch4n/Polentita-Music-iOS.git
+<span class="c">$</span> cd Polentita-Music-iOS
+<span class="c">$</span> npm install && npx pod-install
+<span class="c">$</span> ./scripts/build-ipa.sh
+<span class="g"># → build/ipa/PolentitaMusic.ipa  (sin firmar)</span></code></pre>
+      </div>
+    </div>
+
+    <p class="install__more">
+      <a href="https://github.com/senkuch4n/Polentita-Music-iOS/blob/master/INSTALL.md" target="_blank" rel="noopener">Guía completa y solución de problemas →</a>
+    </p>
+  </section>
+
+  <section class="section faq" id="faq">
+    <div class="section__head">
+      <p class="eyebrow">Preguntas frecuentes</p>
+      <h2>Antes de instalar.</h2>
+    </div>
+
+    <div class="faq__list">
+      <details>
+        <summary>¿Por qué no está en la App Store?</summary>
+        <p>Es un proyecto personal de código abierto. Se distribuye como <code>.ipa</code> para que lo instales vos mismo con tu propia cuenta de Apple.</p>
+      </details>
+      <details>
+        <summary>¿Tengo que reinstalar cada 7 días?</summary>
+        <p>Con un Apple ID gratuito, sí: la firma caduca a los 7 días y hay que volver a firmar. Con una cuenta de Apple Developer ($99/año) dura un año. AltStore puede renovar la firma automáticamente mientras tengas AltServer corriendo en la misma red.</p>
+      </details>
+      <details>
+        <summary>¿Es seguro poner mi Apple ID?</summary>
+        <p>La firma ocurre localmente entre tu computadora y los servidores de Apple. Ni la app ni el repositorio ven tus credenciales. Aun así, se recomienda generar y usar una <em>contraseña específica de app</em> y revocarla cuando no la necesites.</p>
+      </details>
+      <details>
+        <summary>¿Necesito jailbreak?</summary>
+        <p>No. El sideload funciona en un iPhone de fábrica con iOS 16.4 o superior.</p>
+      </details>
+      <details>
+        <summary>¿Pierdo mis canciones al actualizar?</summary>
+        <p>No, mientras reinstales sobre la misma firma/identificador. La biblioteca y las listas se guardan en el almacenamiento de la app.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="cta__inner">
+      <h2>Descargá la última versión</h2>
+      <p>Publicada en GitHub Releases. Cada versión incluye el <code>.ipa</code> listo para firmar.</p>
+      <a class="btn btn--primary btn--lg" href="https://github.com/senkuch4n/Polentita-Music-iOS/releases/latest">Ir a Releases</a>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="foot__inner">
+    <div class="foot__brand">
+      <a class="nav__brand" href="#top">
+        <img src="assets/icon-512.png" alt="" width="30" height="30" />
+        <span>Polentita<strong>Music</strong></span>
+      </a>
+      <p>Reproductor de música local para iPhone. Software libre para uso personal.</p>
+    </div>
+    <div class="foot__col">
+      <h4>Proyecto</h4>
+      <a href="https://github.com/senkuch4n/Polentita-Music-iOS" target="_blank" rel="noopener">Repositorio</a>
+      <a href="https://github.com/senkuch4n/Polentita-Music-iOS/releases" target="_blank" rel="noopener">Releases</a>
+      <a href="https://github.com/senkuch4n/Polentita-Music-iOS/issues" target="_blank" rel="noopener">Reportar un problema</a>
+    </div>
+    <div class="foot__col">
+      <h4>Guías</h4>
+      <a href="https://github.com/senkuch4n/Polentita-Music-iOS/blob/master/INSTALL.md" target="_blank" rel="noopener">Instalación</a>
+      <a href="#faq">Preguntas frecuentes</a>
+      <a href="#install">Compilar desde el código</a>
+    </div>
+  </div>
+  <div class="foot__legal">
+    <span>&copy; <span id="year">2026</span> Polentita Music</span>
+    <span>No afiliado a Apple, Spotify ni YouTube. Usá la app de acuerdo con las leyes de tu país.</span>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

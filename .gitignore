@@ -9,6 +9,9 @@ dist/
 web-build/
 expo-env.d.ts
 
+# Sideload build output (scripts/build-ipa.sh)
+/build/
+
 # Native
 .kotlin/
 *.orig.*
@@ -28,7 +31,12 @@ yarn-error.*
 
 # macOS
 .DS_Store
+
+# Private keys / certs — but NOT the vendored Python CA bundles & test fixtures,
+# which ship with Python.xcframework and are needed to build / make HTTPS calls.
 *.pem
+!ios/Python.xcframework/**/*.pem
+!ios/PythonApp/**/*.pem
 
 # local env files
 .env*.local

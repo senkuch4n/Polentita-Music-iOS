@@ -4,7 +4,10 @@
 
 # Xcode
 #
-build/
+# NOTE: anchored to ios/build/ only. A bare `build/` also matched the vendored
+# Python.xcframework/build/ helpers (utils.sh + Info.plist template) that the
+# "Process Python libraries" build phase needs.
+/build/
 *.pbxuser
 !default.pbxuser
 *.mode1v3
