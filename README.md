@@ -7,14 +7,26 @@
     <a href="INSTALL.md"><b>Guía de instalación</b></a> ·
     <a href="https://github.com/senkuch4n/Polentita-Music-iOS/releases/latest"><b>Descargar .ipa</b></a>
   </p>
+  <p><sub>Port a iOS de <a href="https://github.com/polen-tita/Polentita-Music">polen-tita/Polentita-Music</a> (la app original de Android).</sub></p>
 </div>
 
 ---
 
+> [!NOTE]
+> **Este repo es el port a iOS de [polen-tita/Polentita-Music](https://github.com/polen-tita/Polentita-Music).**
+> Ese es el proyecto original: la app de Android (Kotlin), *"un reproductor de
+> música libre de cuentas, anuncios y rastreo"*. Este repositorio lleva la misma
+> app y sus funciones (biblioteca local, listas, editor de metadatos, mini-juego
+> Dino Runner, etc.) a iPhone con Expo / React Native. Ambos van de la mano;
+> lo que cambia acá es la plataforma y la forma de instalar (sideload en vez de
+> tienda).
+
 ## Qué es
 
 App de música construida con Expo / React Native (workflow *bare*, código nativo
-en `ios/`). No está en la App Store: se distribuye como `.ipa` y se instala por
+en `ios/`), port a iOS del proyecto original de Android
+[polen-tita/Polentita-Music](https://github.com/polen-tita/Polentita-Music).
+No está en la App Store: se distribuye como `.ipa` y se instala por
 **sideload** con [Sideloadly](https://sideloadly.io) o [AltStore](https://altstore.io).
 
 - Biblioteca local en SQLite, reproducción con `react-native-track-player`.
@@ -53,6 +65,11 @@ al instalar.
 
 La landing en `docs/` se publica con **GitHub Pages** (rama `master`, carpeta
 `/docs`): <https://senkuch4n.github.io/Polentita-Music-iOS/>
+
+## Créditos
+
+Proyecto original (Android): **[polen-tita/Polentita-Music](https://github.com/polen-tita/Polentita-Music)**.
+Este repositorio es el port a iOS y se mantiene en sincronía con esa base.
 
 ## Aviso legal
 
